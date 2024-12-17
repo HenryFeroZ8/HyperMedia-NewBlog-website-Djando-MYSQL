@@ -1,0 +1,48 @@
+installation :
+
+python -m venv env 
+
+env\Scripts\activate    .... # use in manual cmd
+
+python -m pip install Django ....  # use inside env path
+
+ django-admin --version
+
+ django-admin startproject myapp
+
+ python manage.py startapp blog  ....# register app in setting.py 
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+importation:
+
+from django.urls import path
+from django.shortcuts import render,redirect
+from django.http import Http404,HttpResponse
+from . import views 
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+URLS:
+
+path("blog/",include("blog.urls")), ............# link this in main urls (/) slash is needed
+
+path("post/<str:post_id>", views.detail, name="detail" )
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+pip install mysqlclient
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'blog',
+        'USER': 'root',
+        'PASSWORD': 'root123',
+        'HOST': 'localhost',
+        'PORT': '3306'
+    }}
+
+superuser 
+ferozz
+feroz@1234
